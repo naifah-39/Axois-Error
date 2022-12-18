@@ -8,7 +8,7 @@ function App() {
   useEffect(() => {
     const fetchData = async () => {
       try { 
-        const hhev = await axios.get('http://localhost:3000/alldata');
+        const hhev = await axios.get('alldata');
         console.log( hhev)
       }
       catch (error) {

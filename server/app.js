@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = 3000;
+const bodyParser = require('body-parser')
 const cors = require('cors')
 const routes = require("express").Router();
 const Data = require("./schema");
@@ -16,7 +17,9 @@ app.use(
       origin: "*",
     })
   );
-  app.use(routes);
+app.use(routes);
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.get('/', (req, res) => {
   res.send('Hello World')
 })
